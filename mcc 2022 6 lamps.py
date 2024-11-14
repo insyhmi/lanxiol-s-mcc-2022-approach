@@ -11,8 +11,8 @@ def lights(p, b, k):
         offset = 0
         while (side_brightness > 0):
             offset += 1
-            room[light[1]-lower_bound-offset] = room[light[1]-lower_bound-offset] + side_brightness
-            room[light[1]-lower_bound+offset] = room[light[1]-lower_bound+offset] + side_brightness
+            room[light[1]-lower_bound-offset] = room[light[1]-lower_bound-offset] + side_brightness if light[1]-lower_bound-offset >= 0 else 0
+            room[light[1]-lower_bound+offset] = room[light[1]-lower_bound+offset] + side_brightness if light[1]-lower_bound+offset <= upper_bound-lower_bound else 0
             side_brightness -= 1
         print(room)
     invalid_pos = 0
@@ -24,4 +24,4 @@ def lights(p, b, k):
 # p => list of the positions of the lamps on the number line
 # b => brightness of the lamps in respective to p
 # k => the treshold
-print(lights([-5,-3, 0, 7], [3, 2, 6, 1], 6))
+print(lights([-5,-3, 0, 10], [3, 10, 6, 3], 6))
