@@ -1,3 +1,4 @@
+WORDS = ['WE', 'THEY', 'DONT', 'KNOW', 'THAT']
 GRAPH = [
     ['WE', 'DONT'],
     ['THEY', 'DONT'],
@@ -20,9 +21,10 @@ def grammarcheck(sentence):
             return grammarcheck(sentence)
         return False
     else:
-        return True
+        return True if sentence[0] in WORDS else False
     
 print(grammarcheck(sentence_splitter("WE KNOW WE KNOW WE KNOW THAT WE"))) #True
 print(grammarcheck(sentence_splitter("WE THAT DONT WE THEY"))) #False
 print(grammarcheck(sentence_splitter("THEY DONT KNOW"))) #True
 print(grammarcheck(sentence_splitter("THEY"))) #True
+print(grammarcheck(sentence_splitter("L"))) #False
