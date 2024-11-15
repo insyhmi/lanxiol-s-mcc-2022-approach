@@ -1,4 +1,4 @@
-# syahmi-s-mcc-2022-approach
+# syahmi (lanxiol)-s-mcc-2022-approach
 My approach to the Malaysian Computing Challenge 2022
 
 This repo is intended to showcase my approach to the problem statements in MCC 2022.
